@@ -23,10 +23,15 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: "pre",
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+      }, {
         // Transpile ES6
         test: /\.js$/,
         use: ['babel-loader'],
-      },{
+      }, {
         // Transpile SASS
         test: /\.(sass|scss)$/,
         use: [
@@ -35,12 +40,6 @@ module.exports = {
           'resolve-url-loader', 
           'sass-loader?sourceMap'
         ]
-      }, {
-        // Lint JavaScript (Airbnb Style Guide)
-        test: /\.js$/,
-        exclude: /node_modules/,
-        enforce: 'pre',
-        use: [{loader: 'eslint-loader', options: {rules: {semi: 0}}}],
       },
     ],
   },

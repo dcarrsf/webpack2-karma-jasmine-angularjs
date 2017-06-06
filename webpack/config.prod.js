@@ -19,6 +19,11 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: "pre",
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+      },{
         // Transpile ES6
         test: /\.js$/,
         use: ['babel-loader'],

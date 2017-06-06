@@ -7,9 +7,9 @@ module.exports = {
   context: path.resolve(__dirname, '../src'),
   // Entry point...
   entry: {
-    app: './main.js',
+    app: './app.js',
   },
-  // Output endpoint (development)
+  // Output endpoint (production)
   output: {
     path: path.resolve(__dirname, '../build/dev/js'),
     filename: '[name].bundle.js',
@@ -18,25 +18,26 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: "pre",
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+      },{
         // Transpile ES6
         test: /\.js$/,
-        use: ['babel-loader'],
+        use: [
+          'babel-loader',
+        ],
       },{
         // Transpile SASS
         test: /\.(sass|scss)$/,
         use: [
           'style-loader',
           'css-loader',
-          'resolve-url-loader', 
+          'resolve-url-loader',
           'sass-loader?sourceMap'
         ]
-      }, {
-        // Lint JavaScript (Airbnb Style Guide)
-        test: /\.js$/,
-        exclude: /node_modules/,
-        enforce: 'pre',
-        use: [{loader: 'eslint-loader', options: {rules: {semi: 0}}}],
-      },
+      }
     ],
   },
   plugins: [

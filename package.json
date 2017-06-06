@@ -1,5 +1,5 @@
 {
-  "name": "karma-jasmine-phantom-es6",
+  "name": "karma-jasmine-es6",
   "version": "1.0.0",
   "description": "Testing environment for ES6 playground.",
   "scripts": {

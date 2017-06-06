@@ -6,10 +6,10 @@ module.exports = function (config) {
     singleRun: true,
     frameworks: [ 'jasmine' ],
     files: [
-      'tests.webpack.js'
+      'karma.webpack.js'
     ],
     preprocessors: {
-      'tests.webpack.js': [ 'webpack', 'sourcemap' ]
+      'karma.webpack.js': [ 'webpack', 'sourcemap' ]
     },
     webpack: {
       devtool: 'inline-source-map',

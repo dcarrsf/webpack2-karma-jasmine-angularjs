@@ -15,7 +15,8 @@ module.exports = function (config) {
       devtool: 'inline-source-map',
       module: {
         loaders: [
-          { test: /\.js$/, loader: 'babel-loader' }
+          { test: /\.js$/, loader: 'babel-loader' },
+          { test: /\.(sass|scss)$/, loader: 'style-loader!css-loader!resolve-url-loader!sass-loader?sourceMap' }
         ]
       }
     },

@@ -1,4 +1,4 @@
-import {Calculator} from './root';
+import {Calculator} from './calculator';
 
 describe('Calculator', () => {
     it('should add two numbers', () => {

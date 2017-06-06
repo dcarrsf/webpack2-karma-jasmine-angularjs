@@ -7,7 +7,7 @@ module.exports = {
   context: path.resolve(__dirname, '../src'),
   // Entry point...
   entry: {
-    app: './app.js',
+    app: './main.js',
   },
   // Output endpoint (development)
   output: {

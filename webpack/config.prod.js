@@ -37,7 +37,7 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     // Extract CSS to separate file
     new ExtractTextPlugin({
-      filename: '../css/[name].bundle.min.css',
+      filename: '[name].bundle.min.css',
       allChunks: true,
     }),
     // Generate the index.html file

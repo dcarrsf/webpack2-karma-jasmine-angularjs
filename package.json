@@ -6,8 +6,6 @@
     "test": "karma start",
     "test-multi": "karma start --single-run=false"
   },
-  "author": "Dan Carr",
-  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
@@ -37,5 +35,7 @@
     "style-loader": "^0.13.1",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.3.0"
-  }
+  },
+  "author": "Dan Carr",
+  "license": "MIT"
 }

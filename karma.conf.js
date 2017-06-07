@@ -4,8 +4,9 @@ module.exports = function (config) {
   config.set({
     browsers: [ 'PhantomJS'/*, 'Chrome', 'Firefox'*/ ],
     singleRun: true,
-    frameworks: [ 'jasmine' ],
+    frameworks: [ 'jasmine-jquery', 'jasmine' ],
     files: [
+      './node_modules/jquery/dist/jquery.min.js',
       'karma.webpack.js'
     ],
     preprocessors: {

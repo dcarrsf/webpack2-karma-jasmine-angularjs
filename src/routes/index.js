@@ -1,6 +1,6 @@
 import angular from 'angular';
-import homeCtrl from './homeCtrl';
-import loginCtrl from './loginCtrl';
+import homeCtrl from './home/home';
+import loginCtrl from './login/login';
 /**
  * *******************************************************
  *
@@ -14,6 +14,6 @@ import loginCtrl from './loginCtrl';
 // Define controllers module
 angular.module('api.controllers', [])
 // Home controller
-.controller('homeCtrl'. homeCtrl)
+.controller('homeCtrl', homeCtrl)
 // Login controller
-.controller('loginCtrl'. loginCtrl);
+.controller('loginCtrl', loginCtrl);

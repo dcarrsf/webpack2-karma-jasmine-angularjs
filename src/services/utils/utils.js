@@ -1,18 +1,15 @@
-import angular from 'angular';
 /**
  * *******************************************************
  *
- *  The Calc service holds methods for testing calculations.
+ *  The Utils service holds methods for testing calculations.
  *
  *  @author     Dan Carr
  *  @date       February 2017
  *
  * *******************************************************
  */
-// Define utils module
-angular.module('api.utils', [])
-// Add Calculator service
-.factory('Calc', () => {
+// Define utils
+export default () => {
   // Private here...
   return {
     add: (arg1, arg2) => {
@@ -22,4 +19,4 @@ angular.module('api.utils', [])
       return arg1 - arg2;
     }
   };
-});
+};

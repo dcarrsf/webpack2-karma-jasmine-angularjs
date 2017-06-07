@@ -59,4 +59,8 @@ module.exports = {
       filename: 'index.html'
     }),
   ],
+  // Needed for angular-router
+  node: {
+    fs: "empty"
+  }
 };

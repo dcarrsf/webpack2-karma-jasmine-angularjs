@@ -58,4 +58,8 @@ module.exports = {
   ],
   // Create Sourcemaps for the bundle
   devtool: 'source-map',
+  // Needed for angular-router
+  node: {
+    fs: "empty"
+  }
 };

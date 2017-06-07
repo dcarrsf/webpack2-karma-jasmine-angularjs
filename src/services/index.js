@@ -1,8 +1,9 @@
 import angular from 'angular';
+import Utils from './utils/utils';
 /**
  * *******************************************************
  *
- *  Add directives to api module.
+ *  Add services to api module.
  *
  *  @author     Dan Carr
  *  @date       February 2017
@@ -10,4 +11,6 @@ import angular from 'angular';
  * *******************************************************
  */
 // Define controllers module
-angular.module('api.directives', []);
+angular.module('api.services', [])
+// Utils service
+.factory('Utils', Utils);

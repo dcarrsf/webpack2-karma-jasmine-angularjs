@@ -9,6 +9,7 @@ module.exports = {
   // Entry point...
   entry: {
     app: './app.js',
+    vendor: ["angular"]
   },
   // Output endpoint (production)
   output: {
@@ -40,6 +41,11 @@ module.exports = {
   plugins: [
     // Avoid publishing files when compilation fails
     new webpack.NoEmitOnErrorsPlugin(),
+    // Split angular to vendor file
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "vendor",
+      filename: "vendor.bundle.min.js"
+    }),
     // Extract CSS to separate file
     new ExtractTextPlugin({
       filename: '[name].bundle.min.css',
@@ -50,6 +56,6 @@ module.exports = {
       title: 'Webpack build example',
       template: '../src/app.ejs',
       filename: '../index.html'
-    }),
+    })
   ],
 };

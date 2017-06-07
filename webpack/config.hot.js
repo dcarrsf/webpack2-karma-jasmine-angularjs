@@ -7,7 +7,8 @@ module.exports = {
   context: path.resolve(__dirname, '../src'),
   // Entry point...
   entry: {
-    app: './app.js',
+    app: './app.js',,
+    vendor: ['angular']
   },
   // Output endpoint (development)
   output: {
@@ -46,6 +47,11 @@ module.exports = {
   plugins: [
     // Avoid publishing files when compilation fails
     new webpack.NoEmitOnErrorsPlugin(),
+    // Split angular to vendor file
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "vendor",
+      filename: "vendor.bundle.js"
+    }),
     // Generate the index.html file
     new HtmlWebpackPlugin({
       title: 'Webpack build example',

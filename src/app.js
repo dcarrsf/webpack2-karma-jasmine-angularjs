@@ -1,5 +1,9 @@
-import Calculator from './components/calculator/calculator';
+import angular from 'angular';
 import './app.scss';
 
-const node = document.createTextNode(`The number is ${Calculator.add(4, 1)}`);
-document.body.appendChild(node);
+// Link to app
+angular.module('ng-test', [])
+// Set up main controller
+.controller('ng-test-controller', ['$scope', ($scope) => {
+  $scope.result = 10;
+}]);

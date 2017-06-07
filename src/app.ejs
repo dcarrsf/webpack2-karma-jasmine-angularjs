@@ -6,6 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
-<body>
+<body ng-app="ng-test">
+  <main ng-controller="ng-test-controller">
+    <p>The number is {{result}}</p>
+  </main>
 </body>
 </html>

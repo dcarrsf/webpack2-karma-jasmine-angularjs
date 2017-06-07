@@ -9,6 +9,9 @@
     "test": "karma start",
     "test-multi": "karma start --single-run=false"
   },
+  "dependencies": {
+    "angular": "^1.6.4"
+  },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",

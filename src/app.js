@@ -1,8 +1,8 @@
 import angular from 'angular';
 import ngRoute from 'angular-route';
 import './services/utils/';
-import './controllers/pages/';
-import './directives/pages/';
+import './routes/controllers/';
+import './routes/directives/';
 import './app.scss';
 
 // Link to app and dependencies

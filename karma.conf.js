@@ -6,7 +6,7 @@ module.exports = function (config) {
     singleRun: true,
     frameworks: [ 'jasmine-jquery', 'jasmine' ],
     files: [
-      './node_modules/jquery/dist/jquery.min.js',
+      'node_modules/jquery/dist/jquery.min.js',
       'karma.webpack.js'
     ],
     preprocessors: {

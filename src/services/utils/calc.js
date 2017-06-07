@@ -13,6 +13,7 @@ import angular from 'angular';
 angular.module('api.utils', [])
 // Add Calculator service
 .factory('Calc', () => {
+  // Private here...
   return {
     add: (arg1, arg2) => {
       return arg1 + arg2;

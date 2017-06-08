@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "angular": "^1.6.4",
-    "angular-router": "0.0.2"
+    "angular-route": "^1.6.4"
   },
   "devDependencies": {
     "angular-mocks": "^1.6.4",

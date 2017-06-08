@@ -8,7 +8,7 @@ module.exports = {
   // Entry point...
   entry: {
     app: './app.js',
-    vendor: ['angular']
+    // vendor: ['angular']
   },
   // Output endpoint (production)
   output: {
@@ -38,6 +38,12 @@ module.exports = {
           'resolve-url-loader',
           'sass-loader?sourceMap'
         ]
+      }, {
+        // Bundle HTML partials
+        test: /\.html$/,
+        use: [
+          'raw-loader',
+        ]
       }
     ],
   },
@@ -45,10 +51,10 @@ module.exports = {
     // Avoid publishing files when compilation fails
     new webpack.NoEmitOnErrorsPlugin(),
     // Split angular to vendor file
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
-      filename: "vendor.bundle.js"
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: "vendor",
+    //   filename: "vendor.bundle.js"
+    // }),
     // Generate the index.html file
     new HtmlWebpackPlugin({
       title: 'Webpack build example',

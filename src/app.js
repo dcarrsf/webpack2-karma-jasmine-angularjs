@@ -1,5 +1,3 @@
-import angular from 'angular';
-import 'angular-router';
 import './services/';
 import './routes/';
 import './directives/';

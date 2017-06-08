@@ -5,6 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><%= htmlWebpackPlugin.options.title %></title>
+<!-- Load angular modules early to avoid page flicker and to split libs from app bundles -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js'></script>
 </head>
 <body ng-app="loginApp">
   <main ng-controller="mainCtrl">

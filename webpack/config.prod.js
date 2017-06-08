@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
   // Entry point...
   entry: {
     app: './app.js',
-    vendor: ["angular"]
+    // vendor: ["angular"]
   },
   // Output endpoint (production)
   output: {
@@ -31,10 +31,17 @@ module.exports = {
       },{
         // Transpile SASS
         test: /\.(sass|scss)$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          loader: 'css-loader!sass-loader',
-        }),
+        use: [
+          'style-loader',
+          'css-loader',
+          'resolve-url-loader', 
+          'sass-loader?sourceMap'
+        ]
+        // test: /\.(sass|scss)$/,
+        // loader: ExtractTextPlugin.extract({
+        //   fallback: 'style-loader',
+        //   loader: 'css-loader!sass-loader',
+        // }),
       }, {
         // Bundle HTML partials
         test: /\.html$/,
@@ -53,10 +60,10 @@ module.exports = {
     //   filename: "vendor.bundle.min.js"
     // }),
     // Extract CSS to separate file
-    new ExtractTextPlugin({
-      filename: '[name].bundle.min.css',
-      allChunks: true,
-    }),
+    // new ExtractTextPlugin({
+    //   filename: '[name].bundle.min.css',
+    //   allChunks: true,
+    // }),
     // Generate the index.html file
     new HtmlWebpackPlugin({
       title: 'Webpack build example',

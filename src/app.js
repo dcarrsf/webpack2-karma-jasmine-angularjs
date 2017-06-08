@@ -1,31 +1,36 @@
+// API
 import './services/';
 import './routes/';
 import './directives/';
+// CSS
 import './app.scss';
+// Partials
+import homeTpl from './routes/home/home.html';
+import loginTpl from './routes/login/login.html';
 
-// Link to app and dependencies
+// 1. Bootstrap app
 angular.module('loginApp', [
   'api.services',
   'api.controllers',
   'api.directives',
   'ngRoute'
 ])
-// Set up main controller
+// 2. Set up main controller
 .controller('mainCtrl', ['$scope', 'Utils', ($scope, Utils) => {
   $scope.result = `${Utils.add(4, 1)}`;
 }])
-// Set up routing
-.config(($routeProvider) => {
+// 3. Set up routing
+.config(['$routeProvider', ($routeProvider) => {
   $routeProvider
   .when('/', {
-    templateUrl: 'home.html',
-    controller: 'homeCtrl'
+    controller: 'homeCtrl',
+    template: homeTpl
   })
   .when('/login', {
-    templateUrl: 'login.html',
-    controller: 'loginCtrl'
+    controller: 'loginCtrl',
+    template: loginTpl
   })
   .otherwise({
     redirectTo: '/'
   });
-});
+}]);

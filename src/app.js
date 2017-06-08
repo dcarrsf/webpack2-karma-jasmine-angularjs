@@ -1,3 +1,14 @@
+/**
+ * *******************************************************
+ *
+ *  The loginApp module, dependencies, controller, and routing.
+ *  (Bundling entry-point for the app)
+ *  
+ *  @author     Dan Carr
+ *  @date       June 2017
+ *
+ * *******************************************************
+ */
 // API
 import './services/';
 import './routes/';

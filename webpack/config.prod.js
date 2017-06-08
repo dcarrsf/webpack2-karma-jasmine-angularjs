@@ -35,17 +35,23 @@ module.exports = {
           fallback: 'style-loader',
           loader: 'css-loader!sass-loader',
         }),
-      },
+      }, {
+        // Bundle HTML partials
+        test: /\.html$/,
+        use: [
+          'raw-loader',
+        ]
+      }
     ],
   },
   plugins: [
     // Avoid publishing files when compilation fails
     new webpack.NoEmitOnErrorsPlugin(),
     // Split angular to vendor file
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
-      filename: "vendor.bundle.min.js"
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: "vendor",
+    //   filename: "vendor.bundle.min.js"
+    // }),
     // Extract CSS to separate file
     new ExtractTextPlugin({
       filename: '[name].bundle.min.css',

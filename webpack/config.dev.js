@@ -55,6 +55,7 @@ module.exports = {
     //   name: "vendor",
     //   filename: "vendor.bundle.js"
     // }),
+    
     // Generate the index.html file
     new HtmlWebpackPlugin({
       title: 'Webpack build example',

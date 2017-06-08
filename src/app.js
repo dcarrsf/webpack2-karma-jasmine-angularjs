@@ -28,7 +28,7 @@ angular.module('loginApp', [
 ])
 // 2. Set up main controller
 .controller('mainCtrl', ['$scope', 'Utils', ($scope, Utils) => {
-  $scope.number = `${Utils.add(4, 1)}`;
+  $scope.number = Utils.add(4, 1);
 }])
 // 3. Set up routing
 .config(['$routeProvider', ($routeProvider) => {

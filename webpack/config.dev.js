@@ -10,10 +10,15 @@ module.exports = {
     app: './app.js',
     // vendor: ['angular']
   },
-  // Output endpoint (production)
+  // Output endpoint (development)
   output: {
     path: path.resolve(__dirname, '../build/dev/js'),
     filename: '[name].bundle.js',
+    publicPath: 'http://localhost:8080/',
+  },
+  // Run the Dev Server (Hot reloading)
+  devServer: {
+    contentBase: path.resolve(__dirname, '../src'),
   },
   // Run tasks with loaders...
   module: {
@@ -23,19 +28,17 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "eslint-loader",
-      },{
+      }, {
         // Transpile ES6
         test: /\.js$/,
-        use: [
-          'babel-loader',
-        ],
-      },{
+        use: ['babel-loader'],
+      }, {
         // Transpile SASS
         test: /\.(sass|scss)$/,
         use: [
           'style-loader',
           'css-loader',
-          'resolve-url-loader',
+          'resolve-url-loader', 
           'sass-loader?sourceMap'
         ]
       }, {
@@ -59,11 +62,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Webpack build example',
       template: '../src/app.ejs',
-      filename: '../index.html'
+      filename: 'index.html'
     }),
   ],
-  // Create Sourcemaps for the bundle
-  devtool: 'source-map',
   // Needed for angular-router
   node: {
     fs: "empty"

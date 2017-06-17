@@ -1,3 +1,3 @@
-# karma-jasmine-es6
+# webpack2-karma-jasmine-angularjs
 
-Testing environment for ES6 playground with testing in Karma and Jasmine and building in Webpack.
+Testing environment for ES6 playground with testing in Karma and Jasmine with AngularJS.

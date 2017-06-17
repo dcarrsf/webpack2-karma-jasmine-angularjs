@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Testing environment for ES6 playground.",
   "scripts": {
-    "dev:hot": "webpack-dev-server --config ./webpack/config.hot.js --inline --hot --no-info",
-    "dev": "webpack --config ./webpack/config.dev.js --progress --colors",
+    "start": "webpack-dev-server --config ./webpack/config.hot.js --inline --hot --no-info",
     "build": "webpack --config ./webpack/config.prod.js --progress --colors --optimize-minimize",
     "test": "karma start",
     "test-multi": "karma start --single-run=false"

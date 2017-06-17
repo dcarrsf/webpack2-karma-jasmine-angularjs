@@ -1,3 +1,4 @@
+import navbar from './navbar/navbar';
 /**
  * *******************************************************
  *
@@ -9,4 +10,6 @@
  * *******************************************************
  */
 // Define controllers module
-angular.module('api.directives', []);
+angular.module('api.directives', [])
+// Navbar component
+.directive('navBar', navbar);

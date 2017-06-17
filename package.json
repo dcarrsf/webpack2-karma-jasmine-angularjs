@@ -1,7 +1,7 @@
 {
-  "name": "karma-jasmine-es6",
+  "name": "webpack2-karma-jasmine-angularjs",
   "version": "1.0.0",
-  "description": "Testing environment for ES6 playground.",
+  "description": "Testing environment and ES6 playground.",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack/config.dev.js --inline --hot --no-info",
     "build": "webpack --config ./webpack/config.prod.js --progress --colors --optimize-minimize",

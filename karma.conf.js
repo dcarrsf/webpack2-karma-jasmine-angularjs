@@ -6,7 +6,10 @@ module.exports = function (config) {
     singleRun: true,
     frameworks: [ 'jasmine' ],
     files: [
-      'karma.webpack.js'
+      './node_modules/angular/angular.min.js',
+      './node_modules/angular-route/angular-route.min.js',
+      './node_modules/angular-mocks/angular-mocks.js',
+      './karma.webpack.js'
     ],
     preprocessors: {
       'karma.webpack.js': [ 'webpack', 'sourcemap' ]
@@ -16,7 +19,8 @@ module.exports = function (config) {
       module: {
         loaders: [
           { test: /\.js$/, loader: 'babel-loader' },
-          { test: /\.(sass|scss)$/, loader: 'style-loader!css-loader!resolve-url-loader!sass-loader?sourceMap' }
+          { test: /\.(sass|scss)$/, loader: 'style-loader!css-loader!resolve-url-loader!sass-loader?sourceMap' },
+          { test: /\.html$/, loader: 'raw-loader' }
         ]
       }
     },

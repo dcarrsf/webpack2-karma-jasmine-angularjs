@@ -1,19 +1,12 @@
-// Make sure the app loads (top-level)
-describe('app', () => {
-  // Should load
-  it('loads without problems', () => {
-    require('./app');
-  });
-});
+import app from '../../app';
 
-// Test the mainStrl as well
-describe('mainCtrl', () => {
-  // Get controller
+describe('homeCtrl', function() {
+  // Get controllers
   let controller;
   const $scope = {};
   beforeEach(angular.mock.module('loginApp'));
   beforeEach(inject((_$controller_) => {
-    controller = _$controller_('mainCtrl', { $scope: $scope });
+    controller = _$controller_('homeCtrl', { $scope: $scope });
   }));
 
   // Confirm controller exists
@@ -27,7 +20,7 @@ describe('mainCtrl', () => {
       expect($scope.number).toBeDefined();
     });
     it('sets the number', () => {
-      expect($scope.number).toEqual(5);
+      expect($scope.number).toEqual(20);
     });
   });
 });

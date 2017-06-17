@@ -18,17 +18,8 @@ html,
 body {
   height: 100%;
   padding: 50px;
-  background-color: royalblue;
+  background-color: gray;
   font-family: 'Arial', sans-serif;
   font-size: 2em;
   color: white;
 }
-
-// ------------------
-// MANIFEST
-
-/* Containers: */
-// @import "./containers/app/App.scss";
-
-/* Components: */
-@import "./components/calculator/calculator.scss";
